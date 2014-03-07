@@ -25,5 +25,7 @@ public class Test {
         ParseTree tree = parser.file(); // begin parsing at init rule
 		ParserRuleContext t = (ParserRuleContext)tree;
 		t.inspect(parser);
+
+        ParseTreeWalker.DEFAULT.walk(new PrintFuncs(), tree);
     }
 }
